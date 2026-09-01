@@ -1,0 +1,239 @@
+:root {
+  --bg: #0b0c0e;
+  --bg-raised: #121318;
+  --bg-card: #16171c;
+  --line: rgba(236, 230, 220, 0.07);
+  --line-strong: rgba(236, 230, 220, 0.14);
+  --text: #ece6dc;
+  --muted: #8a857b;
+  --faint: #5c5852;
+  --gold: #c6a572;
+  --danger: #b07068;
+  --commit: #8f9d82;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+body {
+  background-image:
+    radial-gradient(1200px 500px at 50% -10%, rgba(198, 165, 114, 0.06), transparent 55%),
+    linear-gradient(180deg, #101116 0%, var(--bg) 32%);
+}
+
+#app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 28px 72px;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.lede {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 42em;
+  line-height: 1.5;
+}
+
+.clock {
+  text-align: right;
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.clock strong {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 4px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: rgba(198, 165, 114, 0.45);
+  color: var(--gold);
+}
+
+button.active {
+  background: #1c1a16;
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+button:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.status {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 1.4em;
+}
+
+.status.warn {
+  color: var(--danger);
+}
+
+.status.ok {
+  color: var(--gold);
+}
+
+.stage {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  line-height: 0;
+}
+
+.stage canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 540;
+  touch-action: none;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px 18px;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.hud span:nth-child(odd) {
+  color: var(--faint);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.hud span:nth-child(even) {
+  text-align: right;
+  color: var(--text);
+}
+
+.hud .low {
+  color: var(--danger);
+}
+
+.hud .good {
+  color: var(--commit);
+}
+
+.touch {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.touch button {
+  padding: 16px 12px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.touch button:active,
+.touch button.held {
+  background: #1c1a16;
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.touch .wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 720px) {
+  #app {
+    padding: 24px 16px 48px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .clock {
+    text-align: left;
+  }
+
+  .hud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
