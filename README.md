@@ -4,6 +4,8 @@ A small lunar lander. Thrust along the nose, rotate, and set down on a gold pad.
 
 **Live:** [glibmiklushys.github.io/apogee](https://glibmiklushys.github.io/apogee/)
 
+![Apogee lunar lander](docs/screenshot.png)
+
 ## How to play
 
 A rotates left. D rotates right. Space fires the engine. R restarts the current mare. On a phone, the three buttons under the view do the same job.
