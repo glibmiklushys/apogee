@@ -6,7 +6,7 @@ A small lunar lander. Thrust along the nose, rotate, and set down on a gold pad.
 
 ## How to play
 
-Left and right rotate the ship. Up or X fires the engine. R restarts the current mare. On a phone, the three buttons under the view do the same job.
+A rotates left. D rotates right. Space fires the engine. R restarts the current mare. On a phone, the three buttons under the view do the same job.
 
 A landing counts when you meet a **gold** pad slowly, with little sideways drift, and nearly upright. A softer touch scores more; leftover fuel does too. Hit the rock, arrive too fast, or come in tilted, and the hull is done.
 

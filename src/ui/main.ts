@@ -157,12 +157,12 @@ function bindHold(button: HTMLElement, set: (on: boolean) => void): void {
 
 function onKey(e: KeyboardEvent, down: boolean): void {
   const code = e.code;
-  if (code === "ArrowLeft" || code === "ArrowRight" || code === "ArrowUp" || code === "KeyX") {
+  if (code === "KeyA" || code === "KeyD" || code === "Space") {
     e.preventDefault();
   }
-  if (code === "ArrowLeft") keys.rotateLeft = down;
-  if (code === "ArrowRight") keys.rotateRight = down;
-  if (code === "ArrowUp" || code === "KeyX") keys.thrust = down;
+  if (code === "KeyA") keys.rotateLeft = down;
+  if (code === "KeyD") keys.rotateRight = down;
+  if (code === "Space") keys.thrust = down;
   if (down && code === "KeyR" && !e.repeat) {
     setLevel(state.level, false);
   }
@@ -174,7 +174,7 @@ function shell(): string {
       <div>
         <p class="brand">Apogee</p>
         <h1>Set down on the mare.</h1>
-        <p class="lede">Rotate with left and right. Thrust with up or X. Land on a gold pad — slow, level, and upright. R restarts the slope. Three mares; gravity and the pads get meaner.</p>
+        <p class="lede">A rotates left, D rotates right, Space fires the engine. Land on a gold pad — slow, level, and upright. R restarts the slope. Three mares; gravity and the pads get meaner.</p>
       </div>
       <div class="clock" id="clock"></div>
     </header>
@@ -196,9 +196,9 @@ function shell(): string {
       <span>Angle</span><span id="hud-angle">0°</span>
     </div>
     <div class="touch">
-      <button type="button" id="touch-left">Left</button>
-      <button type="button" id="touch-thrust">Thrust</button>
-      <button type="button" id="touch-right">Right</button>
+      <button type="button" id="touch-left">A</button>
+      <button type="button" id="touch-thrust">Space</button>
+      <button type="button" id="touch-right">D</button>
       <button type="button" id="touch-restart" class="wide">Restart</button>
     </div>
   `;
